@@ -1,14 +1,6 @@
 import puppeteer from "puppeteer";
-import NextCors from 'nextjs-cors';
 
 export default async function getInstagramProfile(req, res) {
-  
-  await NextCors(req, res, {
-    // Options
-    methods: ['GET', 'POST', 'PUT'],
-    origin: '*', // Allow all origins. You can replace '*' with a specific domain if needed.
-    optionsSuccessStatus: 200,
-  });
 
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method not allowed" });

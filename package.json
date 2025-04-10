@@ -1,0 +1,36 @@
+{
+  "name": "social-dev",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/cache": "^11.14.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^6.4.6",
+    "@mui/material": "^6.4.6",
+    "@mui/material-nextjs": "^6.4.3",
+    "@toolpad/core": "^0.12.1",
+    "autoprefixer": "^10.4.20",
+    "axios": "^1.8.1",
+    "bcryptjs": "^2.4.3",
+    "formidable": "^2.0.1",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.0.14",
+    "next": "15.2.1",
+    "nextjs-cors": "^2.2.0",
+    "postcss": "^8.5.3",
+    "puppeteer": "^24.4.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.9",
+    "tailwindcss": "^4.0.9"
+  }
+}

@@ -1,11 +1,23 @@
 import React from "react";
 
 const UsersLeetcode = ({ LeetcodeData, UsersLeetcodeDatabase }) => {
-  const combinedData =
+  // const combinedData =
+  //   (LeetcodeData && Object.keys(LeetcodeData).length > 0) ||
+  //   (UsersLeetcodeDatabase && Object.keys(UsersLeetcodeDatabase).length > 0)
+  //     ? { ...UsersLeetcodeDatabase, ...LeetcodeData }
+  //     : null;
+
+  const hasData =
     (LeetcodeData && Object.keys(LeetcodeData).length > 0) ||
-    (UsersLeetcodeDatabase && Object.keys(UsersLeetcodeDatabase).length > 0)
-      ? { ...UsersLeetcodeDatabase, ...LeetcodeData }
-      : null;
+    (UsersLeetcodeDatabase &&
+      Object.keys(UsersLeetcodeDatabase).length > 0);
+
+  const combinedData = hasData
+    ? {
+      ...(LeetcodeData || {}),
+      ...(UsersLeetcodeDatabase || {}),
+    }
+    : null;
 
   const level = ["Easy", "Medium", "Hard"];
   return (
@@ -54,7 +66,7 @@ const UsersLeetcode = ({ LeetcodeData, UsersLeetcodeDatabase }) => {
                 </div>
                 <div className="m-2 flex md:hidden justify-center items-center">
                   {combinedData.solvedProblems ||
-                  combinedData.leetCodeSolvedProblems ? (
+                    combinedData.leetCodeSolvedProblems ? (
                     <div className="flex justify-center items-center gap-2">
                       {(
                         combinedData.solvedProblems ||
@@ -118,7 +130,7 @@ const UsersLeetcode = ({ LeetcodeData, UsersLeetcodeDatabase }) => {
             </div>
             <div className="m-3 hidden md:flex justify-center items-center">
               {combinedData.solvedProblems ||
-              combinedData.leetCodeSolvedProblems ? (
+                combinedData.leetCodeSolvedProblems ? (
                 <div className="grid grid-cols-1 gap-2">
                   {(
                     combinedData.solvedProblems ||

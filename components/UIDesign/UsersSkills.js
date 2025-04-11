@@ -1,12 +1,24 @@
 import React from "react";
 
 const UsersSkills = ({ userskill, UsersLinkedinSkillsDatabase }) => {
-  const combinedData =
+  // const combinedData =
+  //   (userskill && Object.keys(userskill).length > 0) ||
+  //   (UsersLinkedinSkillsDatabase &&
+  //     Object.keys(UsersLinkedinSkillsDatabase).length > 0)
+  //     ? { ...UsersLinkedinSkillsDatabase, ...userskill }
+  //     : null;
+
+  const hasData =
     (userskill && Object.keys(userskill).length > 0) ||
     (UsersLinkedinSkillsDatabase &&
-      Object.keys(UsersLinkedinSkillsDatabase).length > 0)
-      ? { ...UsersLinkedinSkillsDatabase, ...userskill }
-      : null;
+      Object.keys(UsersLinkedinSkillsDatabase).length > 0);
+
+  const combinedData = hasData
+    ? {
+      ...(userskill || {}),
+      ...(UsersLinkedinSkillsDatabase || {}),
+    }
+    : null;
 
   return (
     <>

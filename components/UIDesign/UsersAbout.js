@@ -2,11 +2,23 @@ import React from "react";
 
 const UsersAbout = ({ aboutData, UsersLinkedinAboutDatabase }) => {
 
-  const combinedData =
+  // const combinedData =
+  //   (aboutData && Object.keys(aboutData).length > 0) ||
+  //   (UsersLinkedinAboutDatabase && Object.keys(UsersLinkedinAboutDatabase).length > 0)
+  //     ? { ...UsersLinkedinAboutDatabase, ...aboutData }
+  //     : null;
+
+  const hasData =
     (aboutData && Object.keys(aboutData).length > 0) ||
-    (UsersLinkedinAboutDatabase && Object.keys(UsersLinkedinAboutDatabase).length > 0)
-      ? { ...UsersLinkedinAboutDatabase, ...aboutData }
-      : null;
+    (UsersLinkedinAboutDatabase &&
+      Object.keys(UsersLinkedinAboutDatabase).length > 0);
+
+  const combinedData = hasData
+    ? {
+      ...(aboutData || {}),
+      ...(UsersLinkedinAboutDatabase || {}),
+    }
+    : null;
 
   return (
     <>

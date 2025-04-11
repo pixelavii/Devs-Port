@@ -1,13 +1,24 @@
 import React from "react";
 
 const UsersGithub = ({ UserGithubData, UsersGithubDatabase }) => {
-  // Combine the two sources into a single object.
-  // Data from UserGithubData will override properties in UsersGithubDatabase.
-  const combinedData =
+
+  // const combinedData =
+  //   (UserGithubData && Object.keys(UserGithubData).length > 0) ||
+  //   (UsersGithubDatabase && Object.keys(UsersGithubDatabase).length > 0)
+  //     ? { ...UsersGithubDatabase, ...UserGithubData }
+  //     : null;
+
+  const hasData =
     (UserGithubData && Object.keys(UserGithubData).length > 0) ||
-    (UsersGithubDatabase && Object.keys(UsersGithubDatabase).length > 0)
-      ? { ...UsersGithubDatabase, ...UserGithubData }
-      : null;
+    (UsersGithubDatabase &&
+      Object.keys(UsersGithubDatabase).length > 0);
+
+  const combinedData = hasData
+    ? {
+      ...(UserGithubData || {}),
+      ...(UsersGithubDatabase || {}),
+    }
+    : null;
 
   return (
     <>

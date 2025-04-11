@@ -1,17 +1,26 @@
 import React from "react";
 
-const UsersStackOverflow = ({
-  StackData = {},
-  UsersStackOverflowDatabase = {},
-}) => {
+const UsersStackOverflow = ({ StackData, UsersStackOverflowDatabase }) => {
   const StackBadges = ["Gold", "Silver", "Bronze"];
-  
-  const combinedData =
-    Object.keys(StackData).length > 0
-      ? StackData
-      : Object.keys(UsersStackOverflowDatabase).length > 0
-      ? UsersStackOverflowDatabase
-      : null;
+
+  // const combinedData =
+  //   Object.keys(StackData).length > 0
+  //     ? StackData
+  //     : Object.keys(UsersStackOverflowDatabase).length > 0
+  //       ? UsersStackOverflowDatabase
+  //       : null;
+
+  const hasData =
+    (StackData && Object.keys(StackData).length > 0) ||
+    (UsersStackOverflowDatabase &&
+      Object.keys(UsersStackOverflowDatabase).length > 0);
+
+  const combinedData = hasData
+    ? {
+      ...(StackData || {}),
+      ...(UsersStackOverflowDatabase || {}),
+    }
+    : null;
 
   return (
     <>

@@ -14,8 +14,6 @@ import UsersInstagram from "./UIDesign/UsersInstagram";
 import UsersLeetcode from "./UIDesign/UsersLeetcode";
 import UsersSkills from "./UIDesign/UsersSkills";
 import { Button } from "@mui/material";
-import { useContext } from "react";
-import { ProfileContext } from "@/context/ProfileContext";
 import Link from "next/link";
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -48,7 +46,6 @@ const Main1 = () => {
   const [socialData, setSocialData] = useState({});
   const [LinkedinRes, setLinkedinRes] = useState([]);
 
-  const { setProfileData } = useContext(ProfileContext);
 
   let combinedData = {
     LinkedIn: "",

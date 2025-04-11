@@ -11,8 +11,6 @@ import UsersStackOverflow from "@/components/UIDesign/UsersStackOverflow";
 import UsersInstagram from "@/components/UIDesign/UsersInstagram";
 import UsersLeetcode from "@/components/UIDesign/UsersLeetcode";
 import UsersSkills from "@/components/UIDesign/UsersSkills";
-import { ProfileContext } from "@/context/ProfileContext";
-import { useContext } from "react";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: "#fff",
@@ -26,8 +24,6 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const UserID = () => {
-  const { profileData } = useContext(ProfileContext);
-  console.log(profileData)
   return (
       <>
         <div className="hidden md:block">

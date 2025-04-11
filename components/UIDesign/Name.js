@@ -2,11 +2,25 @@ import React from "react";
 
 const Name = ({ data, AboutFromDatabase, UsersLinkedinNameDatabase }) => {
 
-  const combinedData =
-    (data && AboutFromDatabase || Object.keys(data || AboutFromDatabase).length > 0) ||
-    (UsersLinkedinNameDatabase && Object.keys(UsersLinkedinNameDatabase).length > 0)
-      ? { ...UsersLinkedinNameDatabase, ...data, ...AboutFromDatabase }
-      : null;
+  // const combinedData =
+  //   (data && AboutFromDatabase || Object.keys(data || AboutFromDatabase).length > 0) ||
+  //   (UsersLinkedinNameDatabase && Object.keys(UsersLinkedinNameDatabase).length > 0)
+  //     ? { ...UsersLinkedinNameDatabase, ...data, ...AboutFromDatabase }
+  //     : null;
+
+  const hasData =
+    (data && Object.keys(data).length > 0) && (AboutFromDatabase &&
+      Object.keys(AboutFromDatabase).length > 0) ||
+    (UsersLinkedinNameDatabase &&
+      Object.keys(UsersLinkedinNameDatabase).length > 0);
+
+  const combinedData = hasData
+    ? {
+      ...(AboutFromDatabase || {}),
+      ...(data || {}),
+      ...(UsersLinkedinNameDatabase || {}),
+    }
+    : null;
 
   return (
     <>

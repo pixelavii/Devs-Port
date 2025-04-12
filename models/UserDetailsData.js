@@ -34,7 +34,7 @@ const Data = new mongoose.Schema({
   instagramImgLink: { type: String},
   instagramName: { type: String},
 
-  UserAbout: { type: String},
+  UserAbout: { type: String, required: true },
   user_ID: { type: String, required: true },
   user_name: { type: String, required: true },
 });

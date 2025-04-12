@@ -1,12 +1,7 @@
 import React from "react";
 
 const UsersLinkedin = ({ UsersLinkedinData, UserLinkedinDatabase }) => {
-  // const combinedData =
-  //   (UsersLinkedinData && Object.keys(UsersLinkedinData).length > 0) ||
-  //   (UserLinkedinDatabase && Object.keys(UserLinkedinDatabase).length > 0)
-  //     ? { ...UserLinkedinDatabase, ...UsersLinkedinData }
-  //     : null;
-
+  
   const hasData =
     (UsersLinkedinData && Object.keys(UsersLinkedinData).length > 0) ||
     (UserLinkedinDatabase &&

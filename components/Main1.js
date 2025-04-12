@@ -112,16 +112,17 @@ const Main1 = () => {
         combinedData.Instagram = instagramres;
         combinedData.LeetCode = leetcoderes;
         combinedData.UserData = mydata;
+        console.log("Response from database for data to be saved", linkRes);
 
         try {
-          console.log(
-            "API call to save these data to the database",
-            combinedData
-          );
+          // console.log(
+          //   "API call to save these data to the database",
+          //   combinedData
+          // );
           const SocialRes = await axios.post("/api/auth/registerData", {
             combinedData,
           });
-          console.log("Response from database for data to be saved");
+          console.log("Response from database for data to be saved", linkRes);
         } catch (err) {
           console.log(err);
         }

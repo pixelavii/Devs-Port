@@ -2,17 +2,8 @@ import React from "react";
 
 const Name = ({ data, AboutFromDatabase, UsersLinkedinNameDatabase }) => {
 
-  // const combinedData =
-  //   (data && AboutFromDatabase || Object.keys(data || AboutFromDatabase).length > 0) ||
-  //   (UsersLinkedinNameDatabase && Object.keys(UsersLinkedinNameDatabase).length > 0)
-  //     ? { ...UsersLinkedinNameDatabase, ...data, ...AboutFromDatabase }
-  //     : null;
-
   const hasData =
-    (data && Object.keys(data).length > 0) && (AboutFromDatabase &&
-      Object.keys(AboutFromDatabase).length > 0) ||
-    (UsersLinkedinNameDatabase &&
-      Object.keys(UsersLinkedinNameDatabase).length > 0);
+    (data && Object.keys(data).length > 0) && (AboutFromDatabase && Object.keys(AboutFromDatabase).length > 0) || (UsersLinkedinNameDatabase && Object.keys(UsersLinkedinNameDatabase).length > 0);
 
   const combinedData = hasData
     ? {
@@ -38,7 +29,7 @@ const Name = ({ data, AboutFromDatabase, UsersLinkedinNameDatabase }) => {
               <p className="md:text-xl text-sm text-white font-semibold">
                 {combinedData.name || combinedData.linkedinName}
               </p>
-              <p className="text-gray-300 md:text-2xl text-xs">
+              <p className="text-gray-300 md:text-xl text-xs">
                 {combinedData.about || combinedData.UserAbout}
               </p>
             </div>

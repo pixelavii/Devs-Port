@@ -1,11 +1,6 @@
 import React from "react";
 
 const UsersLeetcode = ({ LeetcodeData, UsersLeetcodeDatabase }) => {
-  // const combinedData =
-  //   (LeetcodeData && Object.keys(LeetcodeData).length > 0) ||
-  //   (UsersLeetcodeDatabase && Object.keys(UsersLeetcodeDatabase).length > 0)
-  //     ? { ...UsersLeetcodeDatabase, ...LeetcodeData }
-  //     : null;
 
   const hasData =
     (LeetcodeData && Object.keys(LeetcodeData).length > 0) ||

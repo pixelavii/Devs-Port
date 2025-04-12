@@ -1,11 +1,6 @@
 import React from "react";
 
 const UsersInstagram = ({ instaData, UsersInstagramDatabase }) => {
-  // const combinedData =
-  //   (instaData && Object.keys(instaData).length > 0) ||
-  //   (UsersInstagramDatabase && Object.keys(UsersInstagramDatabase).length > 0)
-  //     ? { ...UsersInstagramDatabase, ...instaData }
-  //     : null;
 
   const hasData =
     (instaData && Object.keys(instaData).length > 0) ||

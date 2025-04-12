@@ -2,12 +2,6 @@ import React from "react";
 
 const UsersGithub = ({ UserGithubData, UsersGithubDatabase }) => {
 
-  // const combinedData =
-  //   (UserGithubData && Object.keys(UserGithubData).length > 0) ||
-  //   (UsersGithubDatabase && Object.keys(UsersGithubDatabase).length > 0)
-  //     ? { ...UsersGithubDatabase, ...UserGithubData }
-  //     : null;
-
   const hasData =
     (UserGithubData && Object.keys(UserGithubData).length > 0) ||
     (UsersGithubDatabase &&

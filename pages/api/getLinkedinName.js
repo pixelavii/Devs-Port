@@ -58,7 +58,7 @@ export default async function getLinkedinName(req, res) {
           profilePicture: imgElement ? imgElement.getAttribute("src") : null,
           name: imgElement ? imgElement.getAttribute("alt") : null,
           company: headlineElement ? headlineElement.innerText.trim() : null,
-          about: aboutElement ? aboutElement.innerText.trim() : null,
+          userLinkedinabout: aboutElement ? aboutElement.innerText.trim() : null,
           headlineAbout: headlineAboutElement
             ? headlineAboutElement.innerText.trim()
             : null,

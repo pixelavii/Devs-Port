@@ -29,7 +29,7 @@ export default async function RegisterData(req, res) {
       githubUsername: data.Github.username || "",
 
       linkedinAbout:
-        data.LinkedIn && data.LinkedIn[0] ? data.LinkedIn[0].about : "N/A",
+        data.LinkedIn && data.LinkedIn[0] ? data.LinkedIn[0].userLinkedinabout : "N/A",
       linkedinCompany:
         data.LinkedIn && data.LinkedIn[0] ? data.LinkedIn[0].company : "N/A",
       linkedinHeadline:
@@ -75,7 +75,7 @@ export default async function RegisterData(req, res) {
       instagramImgLink: data.Instagram.ImgLink || "",
       instagramName: data.Instagram.Name || "N/A",
 
-      about: data.UserData && data.UserData[0] ? data.UserData[0].about : "N/A",
+      UserAbout: data.UserData && data.UserData[0] ? data.UserData[0].about : "N/A",
       user_ID:
         data.UserData && data.UserData[0] ? data.UserData[0].user_ID : "",
       user_name:

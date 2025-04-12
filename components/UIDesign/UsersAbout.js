@@ -2,12 +2,6 @@ import React from "react";
 
 const UsersAbout = ({ aboutData, UsersLinkedinAboutDatabase }) => {
 
-  // const combinedData =
-  //   (aboutData && Object.keys(aboutData).length > 0) ||
-  //   (UsersLinkedinAboutDatabase && Object.keys(UsersLinkedinAboutDatabase).length > 0)
-  //     ? { ...UsersLinkedinAboutDatabase, ...aboutData }
-  //     : null;
-
   const hasData =
     (aboutData && Object.keys(aboutData).length > 0) ||
     (UsersLinkedinAboutDatabase &&
@@ -30,7 +24,7 @@ const UsersAbout = ({ aboutData, UsersLinkedinAboutDatabase }) => {
                 style={{ whiteSpace: "pre-line" }}
                 className="md:text-sm text-xs p-3 md:p-5 text-gray-300 text-justify"
               >
-                {combinedData.about || combinedData.linkedinAbout}
+                {combinedData.userLinkedinabout || combinedData.linkedinAbout}
               </p>
             </div>
           </div>

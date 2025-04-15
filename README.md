@@ -1,40 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# 🚀 Dev's Port – Developer's Digital Identity
 
-## Getting Started
+[Live Demo 🔗](https://www.devsport.vercel.app)
 
-First, run the development server:
+Dev's Port is a modern web application designed to unify a developer's digital identity into a single, dynamic portfolio. It eliminates the hassle of managing multiple profiles by automatically fetching and displaying data from platforms like **GitHub**, **LinkedIn**, **LeetCode**, **StackOverflow**, **Instagram**, and more.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+With a sleek and responsive UI, Dev's Port empowers users to showcase their **Achievements**, **Skills**, and **Social Presence** in one centralized hub — making it easier for **Recruiters**, **Collaborators**, and **Peers** to discover their complete professional footprint.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## ✨ Features
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- 🔗 One Profile, Every Platform – Keep all your professional and social profiles in sync.
+- 🔄 Automated Data Collection – No manual updates needed, latest info is fetched automatically.
+- 🏆 Showcase Your Achievements – Display your full digital footprint.
+- 📤 Easy Sharing – One link to rule them all!
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠 Tech Stack
 
-## Learn More
+- **Frontend:** Next.js, React, Tailwind CSS, MaterialUI
+- **State Management:** React Context API
+- **Authentication:** JWT Auth
+- **Database:** MongoDB
+- **Deployment:** Vercel
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+## 📸 Screenshots
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🔐 Login Page
+![Login Page](./public/login.png)
 
-## Deploy on Vercel
+### 🏠 Home Page
+![Home Page](./public/home.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 👤 User Profile
+![User Profile](./public/avii.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+
+## 🚀 Getting Started
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/pixelavii/devs-port.git
+
+
+Made with ❤️ by Avinash

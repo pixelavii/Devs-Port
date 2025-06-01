@@ -12,7 +12,12 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("https://devs-port-backend.onrender.com/api/auth/login", { email, password });
+      const res = await axios.post("https://devs-port-backend.onrender.com/api/auth/login", { email, password }, {
+        withCredentials: true,
+        headers: {
+          "Content-Type": "application/json",
+        }
+      });
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("userID", res.data.id);
       localStorage.setItem("user", res.data.user);

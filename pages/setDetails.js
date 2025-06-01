@@ -30,7 +30,7 @@ const SetDetails = () => {
   const handleSetdetails = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/api/auth/setDetails", {
+      await axios.post("https://devs-port-backend.onrender.com/api/auth/setDetails", {
         github,
         linkedin,
         leetCode,

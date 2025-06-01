@@ -62,7 +62,7 @@ const Main1 = () => {
 
   const getData = async () => {
     try {
-      const res = await axios.post("/api/auth/getDetails", { userID });
+      const res = await axios.post("https://devs-port-backend.onrender.com/api/auth/getDetails", { userID });
       const mydata = res.data.filterData;
       const social = res.data.SocialFilter;
       
@@ -119,7 +119,7 @@ const Main1 = () => {
           //   "API call to save these data to the database",
           //   combinedData
           // );
-          const SocialRes = await axios.post("/api/auth/registerData", {
+          const SocialRes = await axios.post("https://devs-port-backend.onrender.com/api/auth/registerData", {
             combinedData,
           });
           console.log("Response from database for data to be saved", linkRes);
@@ -134,7 +134,7 @@ const Main1 = () => {
 
   const getLeetcode = async (leetcodeData) => {
     try {
-      const MyLeetcodeData = await axios.post("/api/getLeetcode", {
+      const MyLeetcodeData = await axios.post("https://devs-port-backend.onrender.com/api/getLeetcode", {
         leetcodeData,
       });
       const leetcode = MyLeetcodeData.data.profile;
@@ -146,7 +146,7 @@ const Main1 = () => {
 
   const getInstagram = async (instagramData) => {
     try {
-      const MyInstagramData = await axios.post("/api/getInstagram", {
+      const MyInstagramData = await axios.post("https://devs-port-backend.onrender.com/api/getInstagram", {
         instagramData,
       });
       const insta = MyInstagramData.data.profileData;
@@ -158,7 +158,7 @@ const Main1 = () => {
 
   const getStackOverflowDetails = async (stackoverflowData) => {
     try {
-      const MyStackoverflowData = await axios.post("/api/getStackOverflow", {
+      const MyStackoverflowData = await axios.post("https://devs-port-backend.onrender.com/api/getStackOverflow", {
         stackoverflowData,
       });
       const stack = MyStackoverflowData.data.profile;
@@ -170,7 +170,7 @@ const Main1 = () => {
 
   const getGithubDetails = async (gitData) => {
     try {
-      const MyGithubData = await axios.post("/api/getGithub", { gitData });
+      const MyGithubData = await axios.post("https://devs-port-backend.onrender.com/api/getGithub", { gitData });
       const git = MyGithubData.data.profile;
       return git;
     } catch (err) {
@@ -180,7 +180,7 @@ const Main1 = () => {
 
   const getUserDetails = async (linkedinData) => {
     try {
-      const MyLinkedinData = await axios.post("/api/getLinkedinName", {
+      const MyLinkedinData = await axios.post("https://devs-port-backend.onrender.com/api/getLinkedinName", {
         linkedinData,
       });
       setLinkedinSkills(MyLinkedinData.data.LinkedinSkill);

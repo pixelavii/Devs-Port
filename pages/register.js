@@ -13,7 +13,7 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/api/auth/register", { username, email, password });
+      await axios.post("https://devs-port-backend.onrender.com/api/auth/register", { username, email, password });
       router.push("/login");
     } catch (err) {
       setError(err.response?.data?.message || "Registration failed");

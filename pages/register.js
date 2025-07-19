@@ -4,6 +4,7 @@ import { Container, TextField, Button, Typography } from "@mui/material";
 import axios from "axios";
 
 export default function Register() {
+  const [loading, setLoading] = useState(false);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -11,6 +12,7 @@ export default function Register() {
   const router = useRouter();
 
   const handleSubmit = async (e) => {
+    setLoading(true);
     e.preventDefault();
     try {
       await axios.post("https://devs-port-backend.onrender.com/api/auth/register", { username, email, password });
@@ -18,11 +20,30 @@ export default function Register() {
     } catch (err) {
       setError(err.response?.data?.message || "Registration failed");
     }
+    setLoading(false);
   };
 
   return (
     <>
       {/* For desktop view */}
+
+      {loading && (
+        <div className="loader_1 m-auto">
+          <div className="bar1"></div>
+          <div className="bar2"></div>
+          <div className="bar3"></div>
+          <div className="bar4"></div>
+          <div className="bar5"></div>
+          <div className="bar6"></div>
+          <div className="bar7"></div>
+          <div className="bar8"></div>
+          <div className="bar9"></div>
+          <div className="bar10"></div>
+          <div className="bar11"></div>
+          <div className="bar12"></div>
+        </div>
+      )}
+
 
       <div className="bg-black p-5 min-h-screen md:flex hidden items-center justify-center">
         <div className="">
@@ -90,12 +111,12 @@ export default function Register() {
 
       {/* For mobile view */}
       <div className="bg-black min-h-screen md:hidden flex flex-col items-center justify-center">
-          <div className="">
-            <h1 className="text-[25px] p-5 text-left w-[100vw] font-semibold text-white">
-              💡One Profile. <br />
-              🚀Every Platform. <br />
-              ✨Your Complete Digital Identity.
-            </h1>
+        <div className="">
+          <h1 className="text-[25px] p-5 text-left w-[100vw] font-semibold text-white">
+            💡One Profile. <br />
+            🚀Every Platform. <br />
+            ✨Your Complete Digital Identity.
+          </h1>
         </div>
         <Container maxWidth="sm" sx={{ mt: 4 }}>
           <Typography className="text-white" variant="h5" gutterBottom>

@@ -2,10 +2,10 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
-import { Alert } from "@mui/material";
 
 const SetDetails = () => {
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
   const [github, setGithub] = useState("");
   const [linkedin, setLinkedin] = useState("");
   const [stackOverflow, setStackOverflow] = useState("");
@@ -28,6 +28,7 @@ const SetDetails = () => {
   }, []);
 
   const handleSetdetails = async (e) => {
+    setLoading(true);
     e.preventDefault();
     try {
       await axios.post("https://devs-port-backend.onrender.com/api/auth/setDetails", {
@@ -47,15 +48,32 @@ const SetDetails = () => {
       setError(err.response?.data?.message || "Registration failed");
       console.log(err);
     }
+    setLoading(false);
   };
 
   return (
     <>
-      <div className="bg-black md:h-screen gap-5 flex flex-col md:flex-row justify-center items-center">
-        <div className="m-5">
+      {loading && (
+        <div className="loader_1 m-auto">
+          <div className="bar1"></div>
+          <div className="bar2"></div>
+          <div className="bar3"></div>
+          <div className="bar4"></div>
+          <div className="bar5"></div>
+          <div className="bar6"></div>
+          <div className="bar7"></div>
+          <div className="bar8"></div>
+          <div className="bar9"></div>
+          <div className="bar10"></div>
+          <div className="bar11"></div>
+          <div className="bar12"></div>
+        </div>
+      )}
+      <div className="bg-black gap-5 flex flex-col md:flex-row justify-center items-center">
+        <div className="m-5 md:w-[50%]">
           <div>
             <h1 className="md:text-[45px] text-[35px] text-left font-semibold text-white mb-3">
-              Welcome {username} !<br />
+              Welcome {username || "User"} !<br />
               Provide Your Details to Continue...🚀
             </h1>
             <p className="text-[25px] text-gray-400 text-left">
@@ -69,7 +87,7 @@ const SetDetails = () => {
             </div>
           </div>
         </div>
-        <div className="md:m-5 mb-10 md:mb-0">
+        <div className="md:m-5 mb-10 md:pb-5">
           <form onSubmit={handleSetdetails} className="form">
             <span className="signup">Provide Details</span>
             <input

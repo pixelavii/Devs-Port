@@ -4,20 +4,17 @@ import { Container, TextField, Button, Typography } from "@mui/material";
 import axios from "axios";
 
 export default function Login() {
+  const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const router = useRouter();
 
   const handleSubmit = async (e) => {
+    setLoading(true);
     e.preventDefault();
     try {
-      const res = await axios.post("https://devs-port-backend.onrender.com/api/auth/login", { email, password }, {
-        withCredentials: true,
-        headers: {
-          "Content-Type": "application/json",
-        }
-      });
+      const res = await axios.post("https://devs-port-backend.onrender.com/api/auth/login", { email, password });
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("userID", res.data.id);
       localStorage.setItem("user", res.data.user);
@@ -26,6 +23,7 @@ export default function Login() {
     } catch (err) {
       setError(err.response?.data?.message || "Login failed");
     }
+    setLoading(false);
   };
 
   const fetchData = async () => {
@@ -47,6 +45,22 @@ export default function Login() {
   return (
     <>
       {/* For desktop view */}
+      {loading && (
+        <div className="loader_1 m-auto">
+          <div className="bar1"></div>
+          <div className="bar2"></div>
+          <div className="bar3"></div>
+          <div className="bar4"></div>
+          <div className="bar5"></div>
+          <div className="bar6"></div>
+          <div className="bar7"></div>
+          <div className="bar8"></div>
+          <div className="bar9"></div>
+          <div className="bar10"></div>
+          <div className="bar11"></div>
+          <div className="bar12"></div>
+        </div>
+      )}
 
       <div className="bg-black p-5 min-h-screen md:flex hidden items-center justify-center">
         <div>
